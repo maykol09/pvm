@@ -1,0 +1,73 @@
+<form [formGroup]="form">
+  <div class="modal-header">
+    <h5 class="modal-title"><i class="fa fa-plus" aria-hformControlName="post_no" idden="true"></i> Add/Edit Action Steps</h5>
+    <button type="button" class="close" aria-describedby="modal-title" (click)="modal.close('cancel')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+
+    <div class="row">
+      <div class="col-lg-4"><label for="staff_type">Staff type <span class="required">*</span></label></div>
+      <div class="col-lg-8">
+        <kendo-dropdownlist class=""
+                            [data]="staffTypeList"
+                            id="staff_typess"
+                            textField="staff"
+                            valueField="staff"
+                            formControlName="staff_type"
+                            [valuePrimitive]="true">
+        </kendo-dropdownlist>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-4"><label for="username">Action stage <span class="required">*</span></label></div>
+      <div class="col-lg-8">
+        <input type="text" class="form-contrl"
+               [ngClass]="{'redBorder': form.get('action_stage').invalid && form.get('action_stage').touched}"
+               formControlName="action_stage" id="action_stage">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-4"><label for="username">Action step <span class="required">*</span></label></div>
+      <div class="col-lg-8">
+        <input type="text" class="form-contrl"
+               [ngClass]="{'redBorder': form.get('action_step').invalid && form.get('action_step').touched}"
+               formControlName="action_step" id="action_step">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-4"><label for="username">Next step <span class="required">*</span></label></div>
+      <div class="col-lg-8">
+        <input type="text" class="form-contrl"
+               [ngClass]="{'redBorder': form.get('next_step').invalid && form.get('next_step').touched}"
+               formControlName="next_step" id="next_step">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="form-group col-lg-12 col-sm-12">
+        <div class="form-check form-check-inline radioButton">
+          <input type="checkbox" formControlName="for_per_only" id="for_per_only" class="k-checkbox">
+          <label class="k-checkbox-label" for="for_per_only">For HRM only</label>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group col-lg-12 col-sm-12">
+        <div class="form-check form-check-inline radioButton">
+          <input type="checkbox" formControlName="is_active" id="is_active" class="k-checkbox">
+          <label class="k-checkbox-label" for="is_active">Active</label>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-success" (click)="SaveUser()"><i class="fa fa-floppy-o" aria-hidden="true"></i> Save</button>
+    <button type="button" class="btn btn-danger" (click)="modal.close('cancel')"><i class="fa fa-times" aria-hidden="true"></i> Cancel</button>
+  </div>
+</form>

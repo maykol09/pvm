@@ -1,0 +1,44 @@
+<form [formGroup]="form">
+  <div class="modal-header">
+    <h5 class="modal-title"><i class="fa fa-plus" aria-hformControlName="post_no" idden="true"></i> Add/Edit User</h5>
+    <button type="button" class="close" aria-describedby="modal-title" (click)="modal.close('cancel')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+
+    <div class="row">
+      <div class="col-lg-4"><label for="username">Username <span class="required">*</span></label></div>
+      <div class="col-lg-8">
+        <kendo-autocomplete [data]="usernameList"
+                            class="form-contrl userAutoComplete"
+                             [filterable]="true"
+                            (filterChange)="handleFilter($event)"
+                            (valueChange)="selectionChange($event)"
+                            [valueField]="'user_name'"
+                            formControlName="user_name">
+        </kendo-autocomplete>
+      </div>
+    </div>
+    
+    <div class="row" style="margin-top:5px;">
+      <div class="col-lg-4"><label for="name">Name <span class="required">*</span></label></div>
+      <div class="col-lg-8">
+        <input type="text" class="form-control" formControlName="name" id="name">
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group col-lg-12 col-sm-12">
+        <div class="form-check form-check-inline radioButton">
+          <input type="checkbox" formControlName="is_active" id="dir" class="k-checkbox">
+          <label class="k-checkbox-label" for="dir">Active</label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-success" (click)="SaveUser()"><i class="fa fa-floppy-o" aria-hidden="true"></i> Save</button>
+    <button type="button" class="btn btn-danger" (click)="modal.close('cancel')"><i class="fa fa-times" aria-hidden="true"></i> Cancel</button>
+  </div>
+</form>

@@ -1,0 +1,20 @@
+test
+<div class="container-fluid">
+  <kendo-tabstrip (tabSelect)="onTabSelect($event)"  class="questions">
+    <kendo-tabstrip-tab  [title]="'GStaff'" [selected]="true">
+      <ng-template kendoTabContent>
+        <app-staff [StaffType]="staffType"></app-staff>
+      </ng-template>
+    </kendo-tabstrip-tab>
+    <kendo-tabstrip-tab [title]="'NStaff'">
+      <ng-template kendoTabContent>
+        <app-staff  [StaffType]="staffType"></app-staff>
+      </ng-template>
+    </kendo-tabstrip-tab>
+    <kendo-tabstrip-tab [title]="'PStaff'">
+      <ng-template kendoTabContent>
+        <app-staff  [StaffType]="staffType"></app-staff>
+      </ng-template>
+    </kendo-tabstrip-tab>
+  </kendo-tabstrip>
+</div>

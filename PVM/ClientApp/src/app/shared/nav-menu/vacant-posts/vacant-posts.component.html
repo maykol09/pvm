@@ -1,0 +1,54 @@
+
+<div class="modal-header">
+  <h5 class="modal-title">Vacant Post Report Query</h5>
+  <button type="button" class="close" aria-describedby="modal-title" (click)="modal.close('no')">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <div class="row">
+    <div class="col-lg-4"><label for="gradeLevel">Staff type </label></div>
+    <div class="col-lg-8">
+
+      <kendo-dropdownlist class=""
+                          [data]="staffTypeList"
+                          textField="staff"
+                          valueField="staff"
+                          [valuePrimitive]="true"
+                         [(ngModel)]="staff_type">
+      </kendo-dropdownlist>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-4"><label for="gradeLevel">Status </label></div>
+    <div class="col-lg-8">
+
+      <kendo-dropdownlist class=""
+                          [data]="StatusList"
+                          textField="ref_name"
+                          valueField="ref_name"
+                          [(ngModel)]="status"
+                          [valuePrimitive]="true">
+      </kendo-dropdownlist>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-4"><label for="gradeLevel">Office </label></div>
+    <div class="col-lg-8">
+
+      <kendo-dropdownlist class=""
+                          [data]="OfficeList"
+                          textField="office_code"
+                          valueField="office_code"
+                          [(ngModel)]="office"
+                          [valuePrimitive]="true">
+      </kendo-dropdownlist>
+    </div>
+  </div>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-success" (click)="submit()">submit</button>
+  <button type="button" class="btn btn-primary" (click)="modal.close('no')">close</button>
+  <!--<button type="button" class="btn btn-danger" (click)="modal.close('cancel')">Cancel</button>-->
+</div>
+

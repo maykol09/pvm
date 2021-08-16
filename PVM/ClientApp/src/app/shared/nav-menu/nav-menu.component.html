@@ -1,0 +1,54 @@
+
+<div style="position:absolute;height:100%;width:100%;z-index:1000;display:none;"  id="menuIcon"  (click)="menuClose()"></div>
+<div class="topnav" id="myTopnav" [hidden]="noAccess">
+  
+  <div class="who-header">
+    <div class="form-inline">
+      <div style="margin-left: 5px;">
+
+        <span style="color: white; font-size: 16px;">
+          <img src="./assets/images/wpro_logo.png"
+               style="padding-right: 8px;height: 45px;margin-bottom: 2px;" />
+          <span class="systemTitle">Post Vacancy Monitoring</span>
+
+        </span>
+
+      </div>
+    </div>
+  </div>
+  <div class="allMenu">
+    <a (click)="routes('home')" class="menus">
+      <i class="fa fa-home" aria-hidden="true"></i> Home
+    </a>
+   
+    <div class="dropdown menus">
+      <!--<a (click)="routes('reports')" class="menus">
+        <i class="fa fa-bar-chart" aria-hidden="true"></i> Reports
+      </a>-->
+      <button class="dropbtn">
+      <i class="fa fa-bar-chart" aria-hidden="true"></i> Reports <i class="fa fa-caret-down"></i>
+    </button>
+      <div class="dropdown-content" id="dropdownTools">
+        <a (click)="routes('vacant_posts')"><i class="fa fa-file-text-o" aria-hidden="true"></i> Vacant Posts</a>
+        <a (click)="routes('position_created')"><i class="fa fa-file-text-o" aria-hidden="true"></i> Position Created</a>
+       <!-- <a (click)="routes('selection')"><i class="fa fa-file-text-o" aria-hidden="true"></i> Selection</a>-->
+        <a (click)="routes('inactive_posts')"><i class="fa fa-file-text-o" aria-hidden="true"></i> Inactive Posts</a>
+      </div>
+    </div>
+    <div class="dropdown menus">
+      <button class="dropbtn">
+        <i class="fa fa-cog" aria-hidden="true"></i> Maintenance <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content" id="dropdownTools">
+        <a (click)="routes('user')"><i class="fa fa-user" aria-hidden="true"></i> Users</a>
+        <a (click)="routes('reference')"><i class="fa fa-bars" aria-hidden="true"></i> Actin Steps</a>
+      </div>
+    </div>
+    <a style="border-left:1px solid #fff" class="userName">
+      <i class="fa fa-user" aria-hidden="true"></i> {{username}}
+    </a>
+
+    <a href="javascript:void(0);" class="icon" (click)="myFunction()">&#9776;</a>
+  </div>
+</div>
+

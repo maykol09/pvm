@@ -1,0 +1,415 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "assets/css/kendo-all.css";
+@import "assets/css/bootstrap.css";
+@import "assets/css/checkbox-radio-style.css";
+@import "assets/css/bootstrap.overrides.css";
+@import "assets/css/kendo.overrides.css";
+@import "assets/css/spinners.css";
+@import "assets/css/loader.css";
+@import '~ngx-toastr/toastr.css';
+@import "assets/css/font-awesome.min.css";
+/*@import "~ag-grid-community/dist/styles/ag-grid.css";
+@import "~ag-grid-community/dist/styles/ag-theme-blue.css";*/
+
+
+table{
+  border: 1px solid black;
+}
+
+.userAutoComplete .k-searchbar{
+    margin-top:-7px;
+    margin-left:-7px;
+}
+
+
+
+.k-grid-edit-row td > .k-textbox {
+  padding: 6px;
+  border: .5px solid gray;
+  margin-bottom: -4px;
+}
+
+
+
+
+
+.k-grid-edit-row td > .k-widget {
+  margin-bottom: 1px !important;
+  margin-top: 1px !important;
+}
+#printFormActionHistoryGrid.k-grid td {
+  white-space: break-spaces !important;
+}
+@media (min-width: 576px) {
+  .addPost .modal-dialog {
+    max-width: 85% !important;
+  }
+}
+.k-checkbox {
+  -webkit-appearance: checkbox;
+}
+
+.modal {
+  height: auto !important;
+}
+.k-pager-wrap .k-label{
+  width: 150px;
+}
+
+.k-dropdown{
+  margin-bottom: 5px !important;
+  width: 100% !important;
+}
+.k-toolbar{
+  overflow: visible !important;
+}
+
+@media (min-width: 992px) {
+  .modal-lg {
+    width: 1050px !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .modal-lg, .modal-xl {
+    max-width: 1050px !important;
+  }
+}
+
+.modal-dialog.modal-lg {
+  margin-top: 235px !important;
+}
+
+
+.addButton {
+  position: absolute;
+  right: -33px;
+  z-index: 101;
+  margin-top: -16px;
+}
+
+.ag-theme-blue .ag-row-odd {
+  background: #fff;
+}
+
+.top1-new {
+  top: 98px;
+}
+
+.customSortRemoveLabel {
+  cursor: pointer;
+  font-size: 14px !important;
+}
+
+
+.table.k-tabstrip > .k-content {
+  padding: 1rem .2rem !important;
+  margin-bottom: 0px !important;
+}
+
+.ag-theme-blue .ag-cell.ag-cell-inline-editing {
+  height: 100%;
+}
+
+.ag-cell {
+  white-space: normal !important;
+  overflow-y: auto !important;
+}
+
+.k-filtercell .k-widget:not(.k-dropdown-operator), .k-filtercell .k-filtercell-wrapper > .k-textbox {
+  border: solid 1px #cacaca;
+}
+
+.ag-theme-fresh .ag-row {
+  height: auto !important;
+}
+
+.ag-header-group-cell-label, .ag-header-cell-label {
+  justify-content: center;
+  text-align: center;
+}
+
+  .ag-header-cell-label .ag-header-cell-text {
+    /* overflow: hidden; */
+    /* text-overflow: ellipsis; */
+    white-space: normal !important;
+  }
+
+.ag-theme-balham {
+  position: fixed;
+}
+
+.ag-cell-inline-editing {
+  z-index: 10 !important;
+}
+
+.ag-cell-not-inline-editing {
+  z-index: 0 !important;
+}
+
+.ag-cell-inline-editing {
+  z-index: 99 !important;
+}
+
+.ag-theme-blue .ag-ltr .ag-cell {
+  border-bottom: 1px dotted #9bc2e6;
+  vertical-align: middle;
+}
+
+.cell-span {
+  background-color: #fff;
+  z-index: 99 !important;
+}
+
+.cell-span-gray {
+  background: #e5e6e6 !important;
+}
+
+.ag-theme-balham .ag-row-even {
+  background-color: unset;
+}
+
+.ag-theme-balham .ag-row-odd {
+  background-color: unset;
+}
+
+.benchmarks .k-grid th {
+  white-space: normal !important;
+}
+
+.benchmarks .k-grid-header .k-header {
+  vertical-align: middle;
+  text-align: center;
+}
+
+.benchmarks .k-grid tr {
+  white-space: normal;
+}
+
+.k-state-disabled {
+  cursor: not-allowed !important;
+}
+
+.kendoDropdown {
+  border-radius: 4px;
+  width: 100% !important;
+}
+
+body {
+  background-color: #e9edf1;
+}
+
+.k-grid-header th.k-header {
+  background-color: #0072c6 !important;
+  color: #fff;
+}
+
+.k-filtercell .k-filtercell-wrapper > .k-textbox {
+  height: 100%;
+}
+
+.k-textbox {
+  font-size: 1rem;
+}
+
+.k-tabstrip > .k-content {
+  padding: 1rem 1rem;
+  margin-bottom: 35px;
+}
+.postDetails .k-tabstrip > .k-content {
+  padding: 1rem 1rem;
+  margin-bottom: 10px !important;
+}
+.labelQuestion {
+  margin-left: -15px;
+}
+
+.k-tabstrip-items {
+  overflow: hidden;
+}
+
+.k-state-default.k-state-active {
+  background-color: #0072c6 !important;
+  color: #fff !important;
+}
+
+.fade {
+  opacity: 0.5;
+  transition: opacity .15s linear !important;
+}
+
+.modal-content {
+  margin-top: 230px; /*85px;*/
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  pointer-events: auto;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 0.3rem;
+  outline: 0;
+}
+
+@media only screen and (max-width: 400px) {
+  .top1 {
+    top: 83px !important;
+  }
+}
+
+@media only screen and (min-width: 576px) {
+  .containers {
+    max-width: 509px;
+  }
+
+  .subcontainers {
+    max-width: 486px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .containers {
+    max-width: 689px;
+  }
+
+  .subcontainers {
+    max-width: 665px;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .containers {
+    max-width: 929px;
+  }
+
+  .subcontainers {
+    max-width: 929px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .containers {
+    max-width: 1109px;
+  }
+
+  .subcontainers {
+    max-width: 1086px;
+  }
+}
+
+.questions {
+}
+
+  .questions.k-tabstrip-top > .k-tabstrip-items .k-item {
+    border: solid 1px;
+    background-color: #788590;
+    color: #fff !important;
+    margin-left: 0px;
+  }
+
+.subTab11.k-tabstrip-top > .k-tabstrip-items .k-item {
+  border: solid 1px;
+  background-color: #788590;
+  color: #fff !important;
+  margin-left: 0px;
+}
+
+.top0 {
+  top: 50px;
+}
+
+.top1 {
+  top: 102px;
+}
+
+.containers {
+  width: 91.5%;
+  z-index: 1;
+}
+
+.subcontainers {
+  width: 84.5%;
+  z-index: 1;
+}
+
+.k-tabstrip > .k-content {
+  margin-top: 42px;
+}
+
+  .k-tabstrip > .k-content.k-state-active {
+    border-top: solid 1px #e0e0e0;
+  }
+
+
+
+.fixed {
+  position: fixed !important;
+}
+
+.k-tabstrip-items {
+  position: absolute;
+}
+
+.red {
+  color: red !important;
+}
+
+.redBorder {
+  border-color: red !important;
+}
+
+.red-border-calendar .k-picker-wrap.k-state-hover, .red-border-calendar .k-picker-wrap.k-state-default {
+  border-color: #ec7474;
+}
+
+
+.fade {
+  opacity: 0;
+  transition: opacity 0.15s linear;
+}
+
+  .fade.show {
+    opacity: 1;
+  }
+
+.modal.fade .modal-dialog {
+  transition: -webkit-transform 0.3s ease-out;
+  transition: transform 0.3s ease-out;
+  transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
+  -webkit-transform: translate(0, -25%);
+  transform: translate(0, -25%);
+}
+
+.modal-backdrop.fade {
+  opacity: 0.5 !important;
+}
+
+.form-contrl {
+  display: block;
+  width: 100%;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+  transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+  margin-bottom: 5px;
+}
+
+.required {
+  color: red;
+}
+
+

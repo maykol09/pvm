@@ -1,0 +1,72 @@
+
+
+<kendo-grid responsiveHeightDirective
+            [height]="370"
+            style="width:100%;"
+            #grid
+            [kendoGridBinding]="data"
+            [filterable]="showFilter"
+            [pageable]='{pageSizes:[20,50,100]}'
+            [pageSize]="pageSize"
+            [skip]="skip"
+            (pageChange)="pageChange($event)"
+            [sort]="sort"
+            [sortable]="{mode: 'single'}"
+            (sortChange)="sortChange($event)"
+            (dataStateChange)="filterChange($event)"
+            [resizable]="true">
+
+  <ng-template kendoGridToolbarTemplate>
+    <div class="showFilter checkbox checkbox-primary">
+      <input type="checkbox" class="k-checkbox" id="showHideFilter" (click)="showHideFilter()">
+      <label for="showHideFilter" class="k-checkbox-label">
+        <i class="fa fa-filter"
+           aria-hidden="true"></i> Show Filter
+      </label>
+    </div>
+
+    <!--<button type="button" kendoGridExcelCommand icon="file-excel" class="k-primary btn btn-primary float-right">
+      Export to
+      Excel
+    </button>-->
+
+    <button type="button" class="k-primary btn btn-primary floatRight" (click)="AddPost([], 'I')">
+      <i class="fa fa-plus" aria-hidden="true"></i> New Data
+    </button>
+  </ng-template>
+  <kendo-grid-column [width]="150" [locked]="true">
+    <ng-template kendoGridCellTemplate let-dataItem>
+      <button type="button" class="k-primary btn btn-primary btn-sm" (click)="edit(dataItem.post_id)">
+        <i class="fa fa-pencil" aria-hidden="true"></i>
+      </button> &nbsp;
+      <button type="button" class="k-primary btn btn-success btn-sm" (click)="copy(dataItem.post_id)">
+        <i class="fa fa-clone" aria-hidden="true"></i>
+      </button> &nbsp;
+
+      <button type="button" class="k-danger btn btn-danger btn-sm" (click)="delete(dataItem.post_id)">
+        <i class="fa fa-times" aria-hidden="true"></i>
+      </button>
+    </ng-template>
+  </kendo-grid-column>
+  <kendo-grid-column field="post_no" title="Post no" [width]="75" [locked]="true"></kendo-grid-column>
+  <kendo-grid-column field="rec_no" title="Rec no" [width]="75" [locked]="true"></kendo-grid-column>
+  <kendo-grid-column field="post_title" title="Post Title" [width]="255" [locked]="true"></kendo-grid-column>
+  <kendo-grid-column field="vn_no" title="VN no" [width]="150" [locked]="true"></kendo-grid-column>
+  <kendo-grid-column field="office_code" title="Office" [width]="90"></kendo-grid-column>
+  <kendo-grid-column field="dir_code" title="Division" [width]="90"></kendo-grid-column>
+  <kendo-grid-column field="unit_code" title="Unit" [width]="90"></kendo-grid-column>
+  <kendo-grid-column field="grade_level" title="Grade" [width]="90"></kendo-grid-column>
+  <kendo-grid-column field="fund_code" title="Fund" [width]="150"></kendo-grid-column>
+  <kendo-grid-column field="allotment_no" title="PTAEO" [width]="190"></kendo-grid-column>
+  <kendo-grid-column field="last_incumbent" title="Last Incumbent" [width]="250"></kendo-grid-column>
+  <kendo-grid-column field="vacant_since" title="Vacant since" [width]="140"></kendo-grid-column>
+  <kendo-grid-column field="temporary_staff" title="Temporary staff" [width]="180"></kendo-grid-column>
+  <kendo-grid-column field="per_remarks" title="HRM remarks" [width]="300"></kendo-grid-column>
+  <kendo-grid-column field="post_remarks" title="Post remarks" [width]="300"></kendo-grid-column>
+  <kendo-grid-column field="dir_remarks" title="DIR remarks" [width]="300"></kendo-grid-column>
+  <kendo-grid-column field="post_status" title="Post status" [width]="100"></kendo-grid-column>
+  <kendo-grid-column field="with_incumbent" title="With incumbent" [width]="180"></kendo-grid-column>
+  <kendo-grid-column field="user_name" title="Last updated by" [width]="180"></kendo-grid-column>
+  <kendo-grid-column field="date_updated" title="Date updated" [width]="180"></kendo-grid-column>
+  <kendo-grid-column field="in_reports" title="Display in reports" [width]="180"></kendo-grid-column>
+</kendo-grid>

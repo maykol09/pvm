@@ -1,0 +1,62 @@
+
+<kendo-grid [height]="700"
+            style="width:100%;"
+            id="actionHistoryGrid"
+            #grid
+            [kendoGridBinding]="actionData"
+            [filterable]="showFilter"
+            [pageable]='{pageSizes:[20,50,100]}'
+            [pageSize]="pageSize"
+            [skip]="skip"
+            (pageChange)="pageChange($event)"
+            [sort]="sort"
+            [sortable]="{mode: 'single'}"
+            (sortChange)="sortChange($event)"
+            (dataStateChange)="filterChange($event)"
+            (cellClick)="cellClickHandler($event)"
+            (add)="addHandler()"
+            [resizable]="true">
+  <ng-template kendoGridToolbarTemplate>
+    <div class="showFilter checkbox checkbox-primary">
+      <input type="checkbox" class="k-checkbox" id="showHideFilterAction" (click)="showHideFilter()">
+      <label for="showHideFilterAction" class="k-checkbox-label">
+        <i class="fa fa-filter"
+           aria-hidden="true"></i> Show Filter
+      </label>
+    </div>
+    <div class="float-right">
+      <button kendoGridAddCommand *ngIf="!formGroup">Add new</button>
+      <div *ngIf="formGroup">
+        <button class="k-button" [disabled]="!formGroup.valid" (click)="saveRow()">Save</button>
+        <button class="k-button k-primary" (click)="cancelHandler()">Cancel</button>
+      </div>
+    </div>
+
+  </ng-template>
+
+  <kendo-grid-column field="action_date" title="Action Date" [width]="80" editor="date" format="dd MMM yyyy"></kendo-grid-column>
+  <kendo-grid-column field="action_sort" title="Action" [width]="225">
+   
+    <ng-template kendoGridEditTemplate let-dataItem="dataItem" let-column="column" let-formGroup="formGroup">
+      <kendo-dropdownlist [data]="action_stepList"
+                          [defaultItem]="{ post_action_id: null, action_step: '' }"
+                          [valuePrimitive]="true"
+                          textField="action_step"
+                          valueField="action_step"
+                          [value]="dataItem.action_sort"
+                          (selectionChange)="actionStepChanged($event)">
+
+      </kendo-dropdownlist>
+    </ng-template>
+  </kendo-grid-column>
+  <kendo-grid-column field="action_remarks" title="Action Remarks" [width]="150"></kendo-grid-column>
+  <kendo-grid-column field="per_remarks" title="HRM Remarks" [width]="150"></kendo-grid-column>
+  <kendo-grid-column field="action_stage" title="Stage" [width]="90"></kendo-grid-column>
+  <kendo-grid-column field="next_step" title="Next Action" [width]="90"></kendo-grid-column>
+  <kendo-grid-column field="for_per_only" title="For HRM only" [width]="70">
+    <ng-template kendoGridCellTemplate  let-dataItem="dataItem" let-column="column" let-formGroup="formGroup">
+      
+      <span *ngIf="dataItem.for_per_only">Yes</span>
+    </ng-template>
+  </kendo-grid-column>
+</kendo-grid>
