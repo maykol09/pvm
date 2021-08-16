@@ -1,0 +1,31 @@
+
+
+<div class="container-fluid postDetails">
+  <div class="modal-header bd-example-modal-lg">
+    <h5 class="modal-title" style="color:#0072c6;"><i class="fa fa-plus" aria-hformControlName="post_no" idden="true"></i> Add/Edit Post</h5>
+    <button type="button" class="close" aria-describedby="modal-title" (click)="Close('cancel')">
+      <span aria-hformControlName="post_no" idden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body" style="padding:.3em !important;">
+    <kendo-tabstrip (tabSelect)="onTabSelect($event)" class="questions">
+      <kendo-tabstrip-tab [title]="'Post Details'" [selected]="true">
+        <ng-template kendoTabContent>
+          <app-post-details [postData]="postData" [staff_type]="staff_type" [action]="action"></app-post-details>
+        </ng-template>
+      </kendo-tabstrip-tab>
+      <kendo-tabstrip-tab [title]="'Action History'" [disabled]="disabled">
+        <ng-template kendoTabContent>
+          <app-action-history [postData]="postData"   [staff_type]="staff_type"></app-action-history>
+        </ng-template>
+      </kendo-tabstrip-tab>
+      <kendo-tabstrip-tab [title]="'Required Documents'" [disabled]="disabled">
+        <ng-template kendoTabContent>
+         <app-reqt-documents [postData]="postData"  [staff_type]="staff_type"></app-reqt-documents>
+        </ng-template>
+      </kendo-tabstrip-tab>
+    </kendo-tabstrip>
+    
+  </div>
+</div>
+

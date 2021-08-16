@@ -1,0 +1,50 @@
+<kendo-grid [height]="700"
+            style="width:100%;"
+            id="reqtDocumentsGrid"
+            #grid
+            [kendoGridBinding]="reqtData"
+            [filterable]="showFilter"
+            [pageable]='{pageSizes:[20,50,100]}'
+            [pageSize]="pageSize"
+            [skip]="skip"
+            (pageChange)="pageChange($event)"
+            [sort]="sort"
+            [sortable]="{mode: 'single'}"
+            (sortChange)="sortChange($event)"
+            (dataStateChange)="filterChange($event)"
+            (cellClick)="cellClickHandler($event)"
+            (add)="addHandler()"
+            [resizable]="true">
+  <ng-template kendoGridToolbarTemplate>
+    <div class="showFilter checkbox checkbox-primary">
+      <input type="checkbox" class="k-checkbox" id="showHideFilterAction" (click)="showHideFilter()">
+      <label for="showHideFilterAction" class="k-checkbox-label">
+        <i class="fa fa-filter"
+           aria-hidden="true"></i> Show Filter
+      </label>
+    </div>
+    <div class="float-right">
+      <button kendoGridAddCommand *ngIf="!formGroup">Add new</button>
+      <div *ngIf="formGroup">
+        <button class="k-button" [disabled]="!formGroup.valid" (click)="saveRow()">Save</button>
+        <button class="k-button k-primary" (click)="cancelHandler()">Cancel</button>
+      </div>
+    </div>
+  </ng-template>
+
+  <kendo-grid-column field="reqt_name" title="Reqt" [width]="75">
+    <ng-template kendoGridEditTemplate let-dataItem="dataItem" let-column="column" let-formGroup="formGroup">
+      <kendo-dropdownlist [data]="reqt_documentsList"
+                          [defaultItem]="{ post_reqt_id: null, reqt_name: '' }"
+                          [valuePrimitive]="true"
+                          textField="reqt_name"
+                          valueField="reqt_name"
+                          (selectionChange)="reqtChanged($event)"
+                          [value]="dataItem.reqt_name">
+
+      </kendo-dropdownlist>
+    </ng-template>
+  </kendo-grid-column>
+  <kendo-grid-column field="reqt_date" title="Date" [width]="100"  editor="date" format="dd MMM yyyy"></kendo-grid-column>
+  <kendo-grid-column field="reqt_remarks" title="Remarks" [width]="260"></kendo-grid-column>
+</kendo-grid>

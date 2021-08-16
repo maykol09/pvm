@@ -1,0 +1,51 @@
+
+<div class="modal-header">
+  <h5 class="modal-title">PD Status Summary Query</h5>
+  <button type="button" class="close" aria-describedby="modal-title" (click)="modal.close('no')">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <div class="row">
+    <div class="col-lg-4"><label for="gradeLevel">Staff type </label></div>
+    <div class="col-lg-8">
+
+      <kendo-dropdownlist class=""
+                          [data]="staffTypeList"
+                          textField="staff"
+                          valueField="staff"
+                          [valuePrimitive]="true"
+                          [(ngModel)]="staff_type">
+      </kendo-dropdownlist>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-4"><label for="gradeLevel">Enter Start Date </label></div>
+    <div class="col-lg-8">
+
+      <kendo-datepicker style="width:100%"
+                        format="dd MMM yyyy"
+                        placeholder="dd MMM yyyy"
+                         [(ngModel)]="start_date">
+      </kendo-datepicker>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-4"><label for="gradeLevel">Staff type </label></div>
+    <div class="col-lg-8">
+
+      <kendo-datepicker style="width:100%"
+                        format="dd MMM yyyy"
+                        placeholder="dd MMM yyyy"
+                         [(ngModel)]="end_date">
+      </kendo-datepicker>
+    </div>
+  </div>
+
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-success" (click)="submit()">submit</button>
+  <button type="button" class="btn btn-primary" (click)="modal.close('no')">close</button>
+  <!--<button type="button" class="btn btn-danger" (click)="modal.close('cancel')">Cancel</button>-->
+</div>
+

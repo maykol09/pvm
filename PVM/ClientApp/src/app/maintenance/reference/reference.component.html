@@ -1,0 +1,60 @@
+
+<div class="container-fluid">
+  <h4>Action Steps Maintenance</h4>
+  <kendo-grid responsiveHeightDirective
+              [height]="370"
+              style="width:100%;"
+              id="referenceGrid"
+              #grid
+              [kendoGridBinding]="data"
+              [filterable]="showFilter"
+              [pageable]='{pageSizes:[20,50,100]}'
+              [pageSize]="pageSize"
+              [skip]="skip"
+              (pageChange)="pageChange($event)"
+              [sort]="sort"
+              [sortable]="{mode: 'single'}"
+              (sortChange)="sortChange($event)"
+              (dataStateChange)="filterChange($event)"
+              [resizable]="true">
+
+    <ng-template kendoGridToolbarTemplate>
+      <div class="showFilter checkbox checkbox-primary">
+        <input type="checkbox" class="k-checkbox" id="showHideFilter" (click)="showHideFilter()">
+        <label for="showHideFilter" class="k-checkbox-label">
+          <i class="fa fa-filter"
+             aria-hidden="true"></i> Show Filter
+        </label>
+      </div>
+
+
+
+
+      <!--<button type="button" kendoGridExcelCommand icon="file-excel" class="k-primary btn btn-primary float-right">
+        Export to
+        Excel
+      </button>-->
+      <button type="button" class="k-primary btn btn-primary floatRight" (click)="AddRef('I', '')">
+        <i class="fa fa-plus" aria-hidden="true"></i> New Data
+      </button>
+    </ng-template>
+    <kendo-grid-column [width]="30">
+      <ng-template kendoGridCellTemplate let-dataItem>
+        <button type="button" class="k-primary btn btn-primary btn-sm" (click)="EditRef('U', dataItem.action_id)">
+          <i class="fa fa-pencil" aria-hidden="true"></i>
+        </button> &nbsp;
+
+
+        <button type="button" class="k-danger btn btn-danger btn-sm" (click)="DelRef(dataItem.action_id)">
+          <i class="fa fa-times" aria-hidden="true"></i>
+        </button>
+      </ng-template>
+    </kendo-grid-column>
+    <kendo-grid-column field="staff_type" title="Staff type" [width]="30"></kendo-grid-column>
+    <kendo-grid-column field="action_stage" title="Action stage" [width]="90"></kendo-grid-column>
+    <kendo-grid-column field="action_step" title="Action step" [width]="90"></kendo-grid-column>
+    <kendo-grid-column field="next_step" title="Next step" [width]="90"></kendo-grid-column>
+    <kendo-grid-column field="for_per_only" title="For HRM only" [width]="30"></kendo-grid-column>
+    <kendo-grid-column field="is_active" title="Active" [width]="30"></kendo-grid-column>
+  </kendo-grid>
+</div>

@@ -1,0 +1,381 @@
+<form [formGroup]="PostDetails" style="margin-top:-30px;">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-4 ">
+        <div class="row">
+          <div class="col-4"><label for="postNo">Post no <span class="required">*</span></label></div>
+          <div class="col-8">
+            <input type="text" class="form-contrl"
+                   formControlName="post_no" id="postNo">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-4"><label for="recNo">Rec no</label></div>
+          <div class="col-8">
+            <input type="text" class="form-contrl" formControlName="rec_no" id="recNo">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4"><label for="postTitle">Post title <span class="required">*</span></label></div>
+          <div class="col-8">
+            <input type="text" class="form-contrl"
+                   
+                   formControlName="post_title" id="postTitle">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4"><label for="gradeLevel">Grade level <span class="required">*</span></label></div>
+          <div class="col-8">
+            <input type="text" class="form-contrl" formControlName="grade_level" id="grade_level">
+            <!--<kendo-dropdownlist class=""
+                      [data]="StaffTypeList"
+                      textField="ref_name"
+                      valueField="ref_name"
+                      [ngClass]="{'redBorder': PostDetails.get('grade_level').invalid && PostDetails.get('grade_level').touched}"
+                      formControlName="grade_level"
+                      [valuePrimitive]="true">
+  </kendo-dropdownlist>-->
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4"><label for="office">Office</label></div>
+          <div class="col-8">
+            <input type="text" class="form-contrl" formControlName="office_code" id="office_code">
+            <!--<kendo-dropdownlist class=""
+                      [data]="OfficeList"
+                      textField="office_code"
+                      valueField="office_code"
+                      formControlName="office_code"
+                      [valuePrimitive]="true">
+  </kendo-dropdownlist>-->
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4"><label for="division">Division <span class="required">*</span></label></div>
+          <div class="col-8">
+            <input type="text" class="form-contrl" formControlName="dir_code" id="dir_code">
+            <!--<kendo-dropdownlist class=""
+                      [data]="DivList"
+                      textField="dir_code"
+                      valueField="dir_code"
+                      [ngClass]="{'redBorder': PostDetails.get('dir_code').invalid && PostDetails.get('dir_code').touched}"
+                      formControlName="dir_code"
+                      [valuePrimitive]="true">
+  </kendo-dropdownlist>-->
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4"><label for="unit">Unit</label></div>
+          <div class="col-8">
+            <input type="text" class="form-contrl" formControlName="unit_code" id="unit_code">
+            <!--<kendo-dropdownlist class=""
+                      [data]="UnitList"
+                      textField="unit_code"
+                      valueField="unit_code"
+                      formControlName="unit_code"
+                      [valuePrimitive]="true">
+  </kendo-dropdownlist>-->
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4"><label for="postType">Post type <span class="required">*</span></label></div>
+          <div class="col-8">
+            <input type="text" class="form-contrl" formControlName="post_type" id="post_type">
+            <!--<kendo-dropdownlist class=""
+                      [data]="PostTypeList"
+                      textField="ref_name"
+                      valueField="ref_name"
+                      [ngClass]="{'redBorder': PostDetails.get('post_type').invalid && PostDetails.get('post_type').touched}"
+                      formControlName="post_type"
+                      [valuePrimitive]="true">
+  </kendo-dropdownlist>-->
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4"><label for="vnNo">VN no</label></div>
+          <div class="col-8">
+            <input type="text" class="form-contrl" formControlName="vn_no" id="vnNo">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4"><label for="vcd">Vacancy closing date</label></div>
+          <div class="col-8">
+            <!--<input type="text" class="form-contrl" formControlName="vn_close_date" id="vcd">-->
+            <kendo-datepicker style="width:100%"
+                              format="dd MMM yyyy"
+                              placeholder="dd MMM yyyy"
+                              formControlName="vn_close_date">
+            </kendo-datepicker>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4"><label for="duration">Duration</label></div>
+          <div class="col-8">
+            <input type="text" class="form-contrl" formControlName="contract_duration" id="duration">
+          </div>
+        </div>
+      </div>
+
+      <div class="col-4 ">
+
+        <div class="row">
+          <div class="col-4"><label for="vnUrl">VN Url</label></div>
+          <div class="col-8">
+            <input type="text" class="form-contrl" formControlName="vn_url" id="vnUrl">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4"><label for="lastUpdatedBy">Last updated by</label></div>
+          <div class="col-8">
+            <input type="text" class="form-contrl" formControlName="user_name" id="lastUpdatedBy">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-4"><label for="dateUpdated">Date updated</label></div>
+          <div class="col-8">
+            <!--<input type="text" class="form-contrl" formControlName="date_updated" id="dateUpdated">-->
+            <kendo-datepicker style="width:100%;margin-bottom:5px;"
+                              format="dd MMM yyyy"
+                              placeholder="dd MMM yyyy"
+                              formControlName="date_updated">
+            </kendo-datepicker>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4"><label for="status">Status <span class="required">*</span></label></div>
+          <div class="col-8">
+            <input type="text" class="form-contrl" formControlName="post_status" id="post_status">
+            <!--<kendo-dropdownlist class=""
+                      [data]="StatusList"
+                      textField="ref_name"
+                      [ngClass]="{'redBorder': PostDetails.get('post_status').invalid && PostDetails.get('post_status').touched}"
+                      valueField="ref_name"
+                      formControlName="post_status"
+                      [valuePrimitive]="true">
+  </kendo-dropdownlist>-->
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4"><label for="postRemarks">Post remarks</label></div>
+          <div class="col-8">
+            <textarea type="text" style="height:60px" class="form-contrl" formControlName="post_remarks" id="postRemarks"></textarea>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4"><label for="perRemarks">HRM remarks</label></div>
+          <div class="col-8">
+            <textarea type="text" style="height:100px" class="form-contrl" formControlName="per_remarks" id="perRemarks"></textarea>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4"><label for="dirRemarks">DIR remarks</label></div>
+          <div class="col-8">
+            <textarea type="text" style="height:60px" class="form-contrl" formControlName="dir_remarks" id="dirRemarks"></textarea>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4"><label for="cloRemarks">WR/CLO remarks</label></div>
+          <div class="col-8">
+            <textarea type="text" style="height:60px" class="form-contrl" formControlName="wrclo_remarks" id="cloRemarks"></textarea>
+          </div>
+        </div>
+
+
+      </div>
+      <div class="col-4 ">
+
+        <div class="row">
+          <div class="col-4"><label for="ptaeo">PTAEO</label></div>
+          <div class="col-8">
+            <input type="text" class="form-contrl" formControlName="allotment_no" id="ptaeo">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4"><label for="pdStatus">PD status <span class="required">*</span></label></div>
+          <div class="col-8">
+            <input type="text" class="form-contrl" formControlName="pd_status" id="pd_status">
+            <!--<kendo-dropdownlist class=""
+                      [data]="PdStatusList"
+                      textField="ref_name"
+                      valueField="ref_name"
+                      [ngClass]="{'redBorder': PostDetails.get('pd_status').invalid && PostDetails.get('pd_status').touched}"
+                      formControlName="pd_status"
+                      [valuePrimitive]="true">
+  </kendo-dropdownlist>-->
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4"><label for="lastIncumbent">Last incumbent</label></div>
+          <div class="col-8">
+            <input type="text" class="form-contrl" formControlName="last_incumbent" id="lastIncumbent">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4"><label for="vacantSince">Vacant since</label></div>
+          <div class="col-8">
+            <!--<input type="text" class="form-contrl" formControlName="vacant_since" id="vacantSince">-->
+
+            <kendo-datepicker style="width:100%;margin-bottom:5px;"
+                              format="dd MMM yyyy"
+                              placeholder="dd MMM yyyy"
+                              formControlName="vacant_since">
+            </kendo-datepicker>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-4"><label for="temporaryStaff">Temporary staff</label></div>
+          <div class="col-8">
+            <input type="text" class="form-contrl" formControlName="temporary_staff" id="temporary_staff">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4"><label for="selectedCandidate">Selected candidate</label></div>
+          <div class="col-8">
+            <input type="text" class="form-contrl" formControlName="selected_candidate" id="selectedCandidate">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4"><label for="selectedCandidate">Priority level</label></div>
+          <div class="col-8">
+            <input type="text" class="form-contrl" formControlName="priority_level" id="priority_level">
+            <!--<kendo-dropdownlist class=""
+                                [data]="PriorityLevel"
+                                textField="data"
+                                valueField="data"
+                                formControlName="priority_level"
+                                [valuePrimitive]="true">
+            </kendo-dropdownlist>-->
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4"><label for="selectedCandidate">Target completion date</label></div>
+          <div class="col-8">
+            <!--<input type="text" class="form-contrl" formControlName="target_completion_date" id="target_completion_date">-->
+            <kendo-datepicker style="width:100%;margin-bottom:5px;"
+                              format="dd MMM yyyy"
+                              placeholder="dd MMM yyyy"
+                              formControlName="target_completion_date">
+            </kendo-datepicker>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4"><label for="selectedCandidate">Hiring manager</label></div>
+          <div class="col-8">
+            <input type="text" class="form-contrl" formControlName="hiring_manager" id="hiring_manager">
+          </div>
+        </div>
+        <div class="row">
+
+          <div class="form-group col-12 col-sm-12">
+            <div class="form-check form-check-inline radioButton">
+              <input type="checkbox" formControlName="with_incumbent" id="withIncumbent" class="k-checkbox">
+              <label class="k-checkbox-label" for="withIncumbent">With incumbent</label>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+
+          <div class="form-group col-12 col-sm-12">
+            <div class="form-check form-check-inline radioButton">
+              <input type="checkbox" formControlName="in_reports" id="dir" class="k-checkbox">
+              <label class="k-checkbox-label" for="dir">Display in reports</label>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header bg-primary">
+        Post Selection
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-4">
+
+            <label for="no_of_applicants">Total no. of applicants</label>
+
+            <input type="text" class="form-contrl" formControlName="no_of_applicants" id="no_of_applicants">
+
+
+          </div>
+          <div class="col-4">
+            <label for="no_of_internal_applicants">Total no. of internal applicants</label>
+
+            <input type="text" class="form-contrl" formControlName="no_of_internal_applicants" id="no_of_internal_applicants">
+
+          </div>
+          <div class="col-4">
+            <label for="selected_gender">Gender</label>
+            <input type="text" class="form-contrl" formControlName="selected_gender" id="selected_gender">
+            <!--<kendo-dropdownlist class=""
+                                [data]="Gender"
+                                textField="data"
+                                valueField="data"
+                                formControlName="selected_gender"
+                                [valuePrimitive]="true">
+            </kendo-dropdownlist>-->
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4">
+            <label for="selected_source">By source</label>
+            <input type="text" class="form-contrl" formControlName="selected_source" id="selected_source">
+
+          </div>
+          <div class="col-4">
+            <label for="selected_geographical_origin">Geographical Origin</label>
+            <input type="text" class="form-contrl" formControlName="selected_geographical_origin" id="selected_geographical_origin">
+            <!--<kendo-dropdownlist class=""
+                                [data]="GeophicalOriginList"
+                                textField="ref_name"
+                                valueField="ref_name"
+                                formControlName="selected_geographical_origin"
+                                [valuePrimitive]="true">
+            </kendo-dropdownlist>-->
+          </div>
+          <div class="col-4">
+            <label for="selected_geographical_origin_ctry">Geographical Origin Country</label>
+            <input type="text" class="form-contrl" formControlName="selected_geographical_origin_ctry" id="selected_geographical_origin_ctry">
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+<br />
+<kendo-grid 
+            style="width:100%;"
+            id="printFormActionHistoryGrid"
+            #grid
+            [kendoGridBinding]="actionData"
+            [resizable]="true">
+
+
+  <kendo-grid-column field="action_date" title="Action Date" [width]="125" editor="date" format="dd MMM yyyy"></kendo-grid-column>
+  <kendo-grid-column field="action_sort" title="Action" [width]="225">
+  </kendo-grid-column>
+  <kendo-grid-column field="action_remarks" title="Action Remarks" [width]="150"></kendo-grid-column>
+  <kendo-grid-column field="per_remarks" title="HRM Remarks" [width]="150"></kendo-grid-column>
+  <kendo-grid-column field="action_stage" title="Stage" [width]="90"></kendo-grid-column>
+  <kendo-grid-column field="next_step" title="Next Action" [width]="90"></kendo-grid-column>
+  <kendo-grid-column field="for_per_only" editor="boolean" title="For HRM O" [width]="70"></kendo-grid-column>
+</kendo-grid>
+<br />
+<kendo-grid style="width:100%;"
+            id="printFormReqtDocuments"
+            #grid
+            [kendoGridBinding]="reqtData"
+            [resizable]="true">
+  
+
+  <kendo-grid-column field="reqt_name" title="Reqt" [width]="75">
+
+  </kendo-grid-column>
+  <kendo-grid-column field="reqt_date" title="Date" [width]="100" editor="date" format="dd MMM yyyy"></kendo-grid-column>
+  <kendo-grid-column field="reqt_remarks" title="Remarks" [width]="260"></kendo-grid-column>
+</kendo-grid>

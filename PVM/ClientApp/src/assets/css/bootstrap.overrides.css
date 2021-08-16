@@ -1,0 +1,27 @@
+.bg-primary {
+    color: #fff !important;
+    background-color: #337ab7 !important;
+    border-color: #337ab7;
+}
+.card-body{
+}
+
+.form-group {
+    margin-bottom: .50rem;
+}
+
+.list-group-item-border-less {
+    padding: 0.50rem 1rem;
+    border: none;
+}
+
+.form-control{
+    font-size: inherit;
+}
+
+.btn-group-xs>.btn, .btn-xs{
+    padding: 1px 5px;
+    font-size: 12px;
+    line-height: 1.5;
+    border-radius: 3px;
+}
